@@ -162,6 +162,9 @@ static unsigned int mousebg = 0;
  */
 static unsigned int defaultattr = 11;
 
+/* Internal keyboard shortcuts. */
+#define MODKEY Mod1Mask
+
 /*
  * Internal mouse shortcuts.
  * Beware that overloading Button1 will disable the selection.
@@ -174,12 +177,11 @@ static MouseShortcut mshortcuts[] = {
 
 static MouseKey mkeys[] = {
 	/* button               mask            function        argument */
+	{ Button4,       MODKEY|ShiftMask,      zoom,      	{.f = +1} },
+	{ Button5,       MODKEY|ShiftMask,      zoom,    	{.f = -1} },
 	{ Button4,              ShiftMask,      kscrollup,      {.i =  1} },
 	{ Button5,              ShiftMask,      kscrolldown,    {.i =  1} },
 };
-
-/* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
