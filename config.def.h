@@ -172,14 +172,16 @@ static MouseShortcut mshortcuts[] = {
 	{ Button5,              XK_NO_MOD,      "\005" },
 };
 
+#define MODKEY Mod1Mask
 static MouseKey mkeys[] = {
 	/* button               mask            function        argument */
+	{ Button4,       MODKEY|ShiftMask,      xzoom,      	{.f = +1} },
+	{ Button5,       MODKEY|ShiftMask,      xzoom,    	{.f = -1} },
 	{ Button4,              ShiftMask,      kscrollup,      {.i =  1} },
 	{ Button5,              ShiftMask,      kscrolldown,    {.i =  1} },
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
